@@ -1,7 +1,7 @@
 # PHP CS Fixer for Laravel 5.5+
 
-[![Latest Stable Version](https://poser.pugx.org/bgaze/laravel-php-cs-fixer/v/stable)](https://packagist.org/packages/bgaze/laravel-php-cs-fixer)
 [![Total Downloads](https://poser.pugx.org/bgaze/laravel-php-cs-fixer/downloads)](https://packagist.org/packages/bgaze/laravel-php-cs-fixer)
+[![Latest Stable Version](https://poser.pugx.org/bgaze/laravel-php-cs-fixer/v/stable)](https://packagist.org/packages/bgaze/laravel-php-cs-fixer)
 [![Latest Unstable Version](https://poser.pugx.org/bgaze/laravel-php-cs-fixer/v/unstable)](https://packagist.org/packages/bgaze/laravel-php-cs-fixer)
 [![License](https://poser.pugx.org/bgaze/laravel-php-cs-fixer/license)](https://packagist.org/packages/bgaze/laravel-php-cs-fixer)
 
