@@ -19,7 +19,6 @@ class ServiceProvider extends BaseServiceProvider {
         if ($this->app->runningInConsole()) {
             $this->commands([
                 Console\PhpCsFixerVersion::class,
-                Console\PhpCsFixerReadme::class,
                 Console\PhpCsFixerDescribe::class,
                 Console\PhpCsFixerFix::class,
             ]);
