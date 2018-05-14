@@ -1,5 +1,10 @@
 # PHP CS Fixer for Laravel 5.5+
 
+[![Latest Stable Version](https://poser.pugx.org/bgaze/laravel-php-cs-fixer/v/stable)](https://packagist.org/packages/bgaze/laravel-php-cs-fixer)
+[![Total Downloads](https://poser.pugx.org/bgaze/laravel-php-cs-fixer/downloads)](https://packagist.org/packages/bgaze/laravel-php-cs-fixer)
+[![Latest Unstable Version](https://poser.pugx.org/bgaze/laravel-php-cs-fixer/v/unstable)](https://packagist.org/packages/bgaze/laravel-php-cs-fixer)
+[![License](https://poser.pugx.org/bgaze/laravel-php-cs-fixer/license)](https://packagist.org/packages/bgaze/laravel-php-cs-fixer)
+
 This package allows to use [PHP-CS-Fixer](https://cs.sensiolabs.org/) right into Laravel 5.5+ applications 
 to format PHP code following PSR-1 and PSR-2 coding standards.
 
