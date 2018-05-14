@@ -79,7 +79,7 @@ Options:
 
 Examples:
 
-```
+```bash
 // Only shows which all files in your project would have been modified, leaving your files unchanged.
 $ php artisan php-cs-fixer:fix --dry-run
 
