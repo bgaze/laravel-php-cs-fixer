@@ -5,23 +5,23 @@ namespace Bgaze\LaravelPhpCsFixer\Console;
 use Illuminate\Console\Command;
 
 /**
- * The CsFixerFix class.
+ * The PhpCsFixerReadme class.
  */
-class CsFixerVersion extends Command {
+class PhpCsFixerReadme extends Command {
 
     /**
      * The console command signature.
      *
      * @var string
      */
-    protected $signature = 'cs-fixer:version';
+    protected $signature = 'php-cs-fixer:readme';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Display PHP-CS-Fixer version';
+    protected $description = 'Display PHP-CS-Fixer README content';
 
     /**
      * Execute the console command.
@@ -29,7 +29,7 @@ class CsFixerVersion extends Command {
      * @return mixed
      */
     public function handle() {
-        passthru(base_path('vendor/bin/php-cs-fixer') . ' --version');
+        passthru(base_path('vendor/bin/php-cs-fixer') . ' readme');
     }
 
 }

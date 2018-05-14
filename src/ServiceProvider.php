@@ -13,15 +13,15 @@ class ServiceProvider extends BaseServiceProvider {
      */
     public function boot() {
         // Publish configuration.
-        $this->publishes([__DIR__ . '/config/.php_cs' => base_path('.php_cs')], 'bgaze-php-cs-fixer-config');
+        $this->publishes([__DIR__ . '/config/.php-cs-fixer' => base_path('.php-cs-fixer')], 'bgaze-php-cs-fixer-config');
 
         // Register commands
         if ($this->app->runningInConsole()) {
             $this->commands([
-                Console\CsFixerVersion::class,
-                Console\CsFixerReadme::class,
-                Console\CsFixerDescribe::class,
-                Console\CsFixerFix::class,
+                Console\PhpCsFixerVersion::class,
+                Console\PhpCsFixerReadme::class,
+                Console\PhpCsFixerDescribe::class,
+                Console\PhpCsFixerFix::class,
             ]);
         }
     }

@@ -7,16 +7,16 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
 /**
- * The CsFixerFix class.
+ * The PhpCsFixerDescribe class.
  */
-class CsFixerDescribe extends Command {
+class PhpCsFixerDescribe extends Command {
 
     /**
      * The console command signature.
      *
      * @var string
      */
-    protected $signature = 'cs-fixer:describe {name : Name of rule / set.}';
+    protected $signature = 'php-cs-fixer:describe {name : Name of rule / set.}';
 
     /**
      * The console command description.
