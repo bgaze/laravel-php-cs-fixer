@@ -16,7 +16,7 @@ class CsFixerFix extends Command {
      *
      * @var string
      */
-    protected $signature = 'bgaze:cs-fixer:fix {path* : The path to directory or file.}
+    protected $signature = 'cs-fixer:fix {path* : The path to directory or file.}
         {--allow-risky : Allow risky fixers.}
         {--dry-run : Only shows which files would have been modified, leaving your files unchanged.}
         {--stop-on-violation : Stop execution on first violation.}

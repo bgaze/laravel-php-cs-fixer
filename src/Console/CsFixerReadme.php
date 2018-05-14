@@ -14,7 +14,7 @@ class CsFixerReadme extends Command {
      *
      * @var string
      */
-    protected $signature = 'bgaze:cs-fixer:readme';
+    protected $signature = 'cs-fixer:readme';
 
     /**
      * The console command description.

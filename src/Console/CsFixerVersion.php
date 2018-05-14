@@ -14,7 +14,7 @@ class CsFixerVersion extends Command {
      *
      * @var string
      */
-    protected $signature = 'bgaze:cs-fixer:version';
+    protected $signature = 'cs-fixer:version';
 
     /**
      * The console command description.

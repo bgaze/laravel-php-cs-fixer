@@ -16,7 +16,7 @@ class CsFixerDescribe extends Command {
      *
      * @var string
      */
-    protected $signature = 'bgaze:cs-fixer:describe {name : Name of rule / set.}';
+    protected $signature = 'cs-fixer:describe {name : Name of rule / set.}';
 
     /**
      * The console command description.
