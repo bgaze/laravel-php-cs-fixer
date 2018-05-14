@@ -15,6 +15,9 @@ class ServiceProvider extends BaseServiceProvider {
         // Publish configuration.
         $this->publishes([__DIR__ . '/config/.php-cs-fixer' => base_path('.php-cs-fixer')], 'bgaze-php-cs-fixer-config');
 
+        // Register helpers file.
+        require __DIR__ . '/helpers.php';
+
         // Register commands
         if ($this->app->runningInConsole()) {
             $this->commands([

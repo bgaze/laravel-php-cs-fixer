@@ -9,10 +9,11 @@ to format PHP code following PSR-1 and PSR-2 coding standards.
 # Provided features.
 
 * A PHP-CS-Fixer installation right into Laravel 5.5+ projects.
-* Commands to execute PHP-CS-Fixer via Laravel Artisan CLI.
-    + **php-cs-fixer:fix :**         Fix php coding standards for directories or files
+* Commands to execute PHP-CS-Fixer via Laravel Artisan CLI :
+    + **php-cs-fixer:fix :**         Fix php coding standards for directories or files.
     + **php-cs-fixer:describe :**    Describe rule / ruleset of fixer.
-    + **php-cs-fixer:version :**     Display PHP-CS-Fixer version
+    + **php-cs-fixer:version :**     Display PHP-CS-Fixer version.
+* An helper to fix files from the code : **php_cs_fixer**.
 
 ## Installation
 
@@ -30,12 +31,13 @@ To customize the configuration, publish it :
 
 ## Usage
 
-
 Please see [PHP-CS-Fixer documentation](https://cs.sensiolabs.org/#usage) for more details.
 
-#### Fix
+### Fix
 
 Fix your code with PHP Coding Standards.
+
+#### From Artisan CLI
 
 Usage:
 
@@ -87,17 +89,28 @@ Examples:
     // Only fixes all files in the `app` directory with specific configuration file.
     $ php artisan php-cs-fixer:fix --config="path/to/config/file" app
 
-    // Fix file(s) from a command.
-    $this->call('php-cs-fixer:fix', [
-                'path' => ['path/to/file(s)']
-            ]);
+#### From the code
 
-    // Fix files from a console command.
-    Artisan::call('php-cs-fixer:fix', [
-                'path' => ['path/to/file(s)']
-            ]);
+The **php_cs_fixer()** helper wraps **php-cs-fixer:fix** command and allows to fix files right from the code.  
+It returns the exit code of the command.
 
-#### Describe rule or set
+Usage :
+
+    // $path : a path or an array of pathes.
+    // $options : an array of options.
+    php_cs_fixer($path, $options);
+
+    Exemples :
+
+        php_cs_fixer('path/to/a/file');
+
+    php_cs_fixer(['path/to/file1', 'path/to/dir1', 'path/to/file2', 'path/to/dir2'], [
+        '--allow-risky' => true,
+        '--dry-run' => true,
+        '--config' => 'path/to/a/config/file'
+    ]);
+
+### Describe rule or set
 
 Usage:
 
@@ -118,7 +131,7 @@ Options:
     --env[=ENV]           The environment the command should run under
     -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
 
-#### Version
+### Version
 
 Displays PHP-CS-Fixer version installed.
 
