@@ -8,7 +8,7 @@
 This package allows to use [PHP-CS-Fixer](https://cs.sensiolabs.org/) right into Laravel 5.5+ applications 
 to format PHP code following PSR-1 and PSR-2 coding standards.
 
-> Any comment, suggestion or contribution is welcomed.
+> Any comment, suggestion or contribution is welcomed. 
 
 # Credits
 
