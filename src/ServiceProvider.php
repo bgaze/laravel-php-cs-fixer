@@ -4,10 +4,15 @@ namespace Bgaze\LaravelPhpCsFixer;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
+/**
+ * Bgaze\LaravelPhpCsFixer Service Provider
+ * 
+ * @author bgaze <benjamin@bgaze.fr>
+ */
 class ServiceProvider extends BaseServiceProvider {
 
     /**
-     * Bootstrap the application services.
+     * Bootstrap the application services and publishes it's configuration.
      *
      * @return void
      */
