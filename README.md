@@ -22,7 +22,7 @@ to format PHP code following PSR-1 and PSR-2 coding standards.
     + **php-cs-fixer:version :**     Display PHP-CS-Fixer version.
 * An helper to fix files from the code : **php_cs_fixer**.
 
-## Installation
+# Installation
 
 Install this package using [Composer](https://getcomposer.org).
 
@@ -36,15 +36,15 @@ To customize the configuration, publish it :
 > Configuration isn't a standard Laravel config files as it returns an instance of `PhpCsFixer\Config`.  
 > It will be published into a `.php-cs-fixer` file at the Laravel installation root.
 
-## Usage
+# Usage
 
 Please see [PHP-CS-Fixer documentation](https://cs.sensiolabs.org/#usage) for more details.
 
-### Fix
+## Fix
 
 Fix your code with PHP Coding Standards.
 
-#### From Artisan CLI
+### From Artisan CLI
 
 Usage:
 
@@ -100,7 +100,7 @@ $ php artisan php-cs-fixer:fix app
 $ php artisan php-cs-fixer:fix --config="path/to/config/file" app
 ```
 
-#### From the code
+### From PHP code
 
 The **php_cs_fixer()** helper wraps **php-cs-fixer:fix** command and allows to fix files right from the code.  
 It returns the exit code of the command.
@@ -127,7 +127,7 @@ php_cs_fixer(['path/to/file/or/dir/1', 'path/to/file/or/dir/2'], [
 ]);
 ```
 
-### Describe rule or set
+## Describe rule or set
 
 Usage:
 
@@ -150,7 +150,7 @@ Options:
 -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
 ```
 
-### Version
+## Version
 
 Displays PHP-CS-Fixer version installed.
 
