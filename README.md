@@ -10,12 +10,12 @@ to format PHP code following PSR-1 and PSR-2 coding standards.
 
 > Any comment, suggestion or contribution is welcomed.
 
-# Credits.
+# Credits
 
 This package is an adapted copy of [https://github.com/JackieDo/Artisan-PHP-CS-Fixer]().  
 Credits and many thanks to [JackieDo](https://github.com/JackieDo) :-)
 
-# Provided features.
+# Provided features
 
 * A PHP-CS-Fixer installation right into Laravel 5.5+ projects.
 * Commands to execute PHP-CS-Fixer via Laravel Artisan CLI :
