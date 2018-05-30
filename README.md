@@ -8,10 +8,12 @@
 This package allows to use [PHP-CS-Fixer](https://cs.sensiolabs.org/) right into Laravel 5.5+ applications 
 to format PHP code following PSR-1 and PSR-2 coding standards.
 
-> This package is an adapted copy of [https://github.com/JackieDo/Artisan-PHP-CS-Fixer]().  
-> Credits and many thanks to [JackieDo](https://github.com/JackieDo) :-)
->
 > Any comment, suggestion or contribution is welcomed.
+
+# Credits.
+
+This package is an adapted copy of [https://github.com/JackieDo/Artisan-PHP-CS-Fixer]().  
+Credits and many thanks to [JackieDo](https://github.com/JackieDo) :-)
 
 # Provided features.
 
