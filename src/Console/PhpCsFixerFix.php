@@ -3,28 +3,9 @@
 namespace Bgaze\LaravelPhpCsFixer\Console;
 
 use Illuminate\Console\Command;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Input\InputArgument;
 
 /**
  * This Console application fixes PHP file(s) using PHP-CS-Fixer.
- * 
- * Usage :
-  $ php artisan php-cs-fixer:fix /path/to/my/file-or-dir
- * 
- * Arguments and options :
-  {path* : The path to directory or file.}
-  {--allow-risky : Allow risky fixers.}
-  {--dry-run : Only shows which files would have been modified, leaving your files unchanged.}
-  {--stop-on-violation : Stop execution on first violation.}
-  {--diff : Also produce diff for each file.}
-  {--using-cache : Enable cache usage.}
-  {--path-mode=override : Specify path mode (override|intersection).}
-  {--config= : The path to a .php-cs-fixer file.}
-  {--rules= : The rules to apply for fixer (comma separated).}
-  {--cache-file= : The path to the cache file.}
-  {--format= : To output results in other formats.}
-  {--show-progress=none : Type of progress indicator (none|run-in|estimating).}
  * 
  * @author bgaze <benjamin@bgaze.fr>
  */
