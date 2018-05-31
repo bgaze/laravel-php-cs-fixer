@@ -5,13 +5,7 @@ namespace Bgaze\LaravelPhpCsFixer\Console;
 use Illuminate\Console\Command;
 
 /**
- * Laravel Console Command showing the current PHP-CS-Fixer version.
- * 
- * Usage : 
- * 
- * $ php artisan php-cs-fixer:version
- * 
- * No arguments nor options
+ * This console application shows the current PHP-CS-Fixer version.
  * 
  * @author bgaze <benjamin@bgaze.fr>
  */
