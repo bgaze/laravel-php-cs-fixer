@@ -89,11 +89,11 @@ class PhpCsFixerFix extends Command {
             return base_path($this->option('config'));
         }
 
-        if (file_exists(base_path('.php-cs-fixer'))) {
-            return base_path('.php-cs-fixer');
+        if (file_exists(base_path('.php-cs'))) {
+            return base_path('.php-cs');
         }
 
-        return __DIR__ . '/../config/.php-cs-fixer';
+        return __DIR__ . '/../config/.php-cs';
     }
 
     /**

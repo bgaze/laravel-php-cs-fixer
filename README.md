@@ -35,8 +35,8 @@ To customize the configuration, publish it :
 ```$ php artisan vendor:publish --tag=php-cs-fixer```
 
 > **Note :**  
-> Configuration isn't a standard Laravel config files as it returns an instance of `PhpCsFixer\Config`.  
-> It will be published into a `.php-cs-fixer` file at the Laravel installation root.
+> Configuration isn't a standard Laravel config files as it returns an instance of `\PhpCsFixer\Config`.  
+> It will be published into a `.php-cs` file at the Laravel installation root.
 
 # Usage
 
