@@ -12,7 +12,7 @@ to format PHP code following PSR-1 and PSR-2 coding standards.
 
 # Credits
 
-This package is an adapted copy of [https://github.com/JackieDo/Artisan-PHP-CS-Fixer]().  
+This package is an adapted copy of [https://github.com/JackieDo/Artisan-PHP-CS-Fixer](https://github.com/JackieDo/Artisan-PHP-CS-Fixer).  
 Credits and many thanks to [JackieDo](https://github.com/JackieDo) :-)
 
 # Provided features
