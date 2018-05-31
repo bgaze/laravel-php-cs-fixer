@@ -5,7 +5,7 @@ namespace Bgaze\LaravelPhpCsFixer;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
 /**
- * Bgaze\LaravelPhpCsFixer Service Provider
+ * The package Service Provider
  * 
  * @author bgaze <benjamin@bgaze.fr>
  */
