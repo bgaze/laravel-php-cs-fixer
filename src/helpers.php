@@ -11,12 +11,15 @@
  * 
  * @return boolean
  */
-function php_cs_fixer($path, array $options = []) {
-    if (!is_array($path)) {
-        $path = [$path];
-    }
 
-    $options = array_merge($options, ['path' => $path]);
-    
-    return Artisan::call('php-cs-fixer:fix', $options);
+if (! function_exists('php_cs_fixer')) {
+  function php_cs_fixer($path, array $options = []) {
+      if (!is_array($path)) {
+          $path = [$path];
+      }
+
+      $options = array_merge($options, ['path' => $path]);
+
+      return Artisan::call('php-cs-fixer:fix', $options);
+  }
 }
