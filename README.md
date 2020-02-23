@@ -35,7 +35,7 @@ Install this package using [Composer](https://getcomposer.org).
 
 To customize the configuration, publish it :
 
-```$ php artisan vendor:publish --tag=php-cs-fixer```
+```$ php artisan vendor:publish --tag=bgaze-php-cs-fixer-config```
 
 > **Note :**  
 > Configuration isn't a standard Laravel config files as it returns an instance of `\PhpCsFixer\Config`.  
