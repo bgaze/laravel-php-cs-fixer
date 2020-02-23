@@ -6,10 +6,11 @@ use Illuminate\Console\Command;
 
 /**
  * This Console application describes a rule or ruleset of PHP-CS-Fixer.
- * 
+ *
  * @author bgaze <benjamin@bgaze.fr>
  */
-class PhpCsFixerDescribe extends Command {
+class PhpCsFixerDescribe extends Command
+{
 
     /**
      * The console command signature.
@@ -25,12 +26,14 @@ class PhpCsFixerDescribe extends Command {
      */
     protected $description = 'Describe rule / ruleset of fixer.';
 
+
     /**
      * Execute the console command.
      *
      * @return mixed
      */
-    public function handle() {
+    public function handle()
+    {
         passthru(base_path('vendor/bin/php-cs-fixer') . ' describe ' . $this->argument('name'));
     }
 

@@ -8,7 +8,10 @@
 This package allows to use [PHP-CS-Fixer](https://cs.sensiolabs.org/) right into Laravel 5.5+ applications 
 to format PHP code following PSR-1 and PSR-2 coding standards.
 
-> Any comment, suggestion or contribution is welcomed. 
+> **Important:**  
+> Default PHP-CS-Fixer config was updated in v2 to remove dependency to `@Symfony` ruleset and be more compliant with Laravel coding style.  
+> If needed, you'll find v1 config [here](https://github.com/bgaze/laravel-php-cs-fixer/blob/1.0.2/src/config/.php-cs).
+
 
 # Credits
 
@@ -110,12 +113,12 @@ It returns the exit code of the command.
 Usage :
 
 ```php
-// $path : a path or an array of pathes.
+// $path : a path or an array of paths.
 // $options : an array of options.
 php_cs_fixer($path, $options);
 ```
 
-Exemples :
+Examples :
 
 ```php
 // Quick.
