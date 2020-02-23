@@ -2,3 +2,4 @@
 /.idea/
 /vendor/
 /src/_ide_helper.php
+/composer.lock
