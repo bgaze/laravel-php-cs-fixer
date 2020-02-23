@@ -2,6 +2,7 @@
 
 namespace Bgaze\LaravelPhpCsFixer\Console;
 
+use Exception;
 use Illuminate\Console\Command;
 
 /**
@@ -41,26 +42,37 @@ class PhpCsFixerFix extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @throws Exception
      */
     public function handle()
     {
         $params = [];
 
         // Prepare arguments.
-        foreach ($this->argument('path') as $path) {
-            $params[] = '"' . base_path($path) . '"';
-        }
+        $this->preparePaths($params);
 
         // Get configuration file.
-        $params[] = '--config="' . $this->getConfigFile() . '"';
+        $this->setConfigFile($params);
 
         // Prepare options.
         $this->prepareOptions($params);
 
         // Fix files.
         chdir(base_path());
-        passthru(base_path('vendor/bin/php-cs-fixer') . ' fix ' . implode(' ', $params));
+        passthru($this->getCommand($params));
+    }
+
+
+    /**
+     * Compile the PHP-CS-Fixer command to execute
+     *
+     * @param  array  $params  The PHP-CS-Fixer parameters array
+     *
+     * @return string
+     */
+    protected function getCommand(array &$params)
+    {
+        return base_path('vendor/bin/php-cs-fixer') . ' fix ' . implode(' ', $params);
     }
 
 
@@ -69,15 +81,13 @@ class PhpCsFixerFix extends Command
      *
      * @param  array  $params  The PHP-CS-Fixer parameters array
      *
-     * @throws \Exception
+     * @throws Exception
      */
-    protected function preparePathes(array &$params)
+    protected function preparePaths(array &$params)
     {
-        $params = [];
-
         foreach ($this->argument('path') as $path) {
             if (!file_exists(base_path($path))) {
-                throw new \Exception("Provided path doesn't exists : " . base_path($path));
+                throw new Exception("Provided path doesn't exists : " . base_path($path));
             }
 
             $params[] = '"' . base_path($path) . '"';
@@ -88,19 +98,24 @@ class PhpCsFixerFix extends Command
     /**
      * Get the configuration file to use.
      *
-     * @return string The path of the config file
+     * @param  array  $params  The PHP-CS-Fixer parameters array
+     *
+     * @throws Exception
      */
-    protected function getConfigFile()
+    protected function setConfigFile(array &$params)
     {
-        if ($this->option('config') && file_exists(base_path($this->option('config')))) {
-            return base_path($this->option('config'));
+        if ($this->option('config')) {
+            $config = base_path($this->option('config'));
+            if (!file_exists($config)) {
+                throw new Exception("Provided config doesn't exists : " . $config);
+            }
+        } elseif (file_exists(base_path('.php-cs'))) {
+            $config = base_path('.php-cs');
+        } else {
+            $config = realpath(__DIR__ . '/../config/.php-cs');
         }
 
-        if (file_exists(base_path('.php-cs'))) {
-            return base_path('.php-cs');
-        }
-
-        return __DIR__ . '/../config/.php-cs';
+        $params[] = '--config="' . $config . '"';
     }
 
 
@@ -109,7 +124,7 @@ class PhpCsFixerFix extends Command
      *
      * @param  array  $params  The PHP-CS-Fixer parameters array
      *
-     * @throws \Exception
+     * @throws Exception
      */
     protected function prepareOptions(array &$params)
     {
