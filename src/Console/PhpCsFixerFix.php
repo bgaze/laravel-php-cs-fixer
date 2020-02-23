@@ -6,10 +6,11 @@ use Illuminate\Console\Command;
 
 /**
  * This Console application fixes PHP file(s) using PHP-CS-Fixer.
- * 
+ *
  * @author bgaze <benjamin@bgaze.fr>
  */
-class PhpCsFixerFix extends Command {
+class PhpCsFixerFix extends Command
+{
 
     /**
      * The console command signature.
@@ -36,12 +37,14 @@ class PhpCsFixerFix extends Command {
      */
     protected $description = 'Fix php coding standards for directories or files';
 
+
     /**
      * Execute the console command.
      *
      * @return mixed
      */
-    public function handle() {
+    public function handle()
+    {
         $params = [];
 
         // Prepare arguments.
@@ -60,14 +63,16 @@ class PhpCsFixerFix extends Command {
         passthru(base_path('vendor/bin/php-cs-fixer') . ' fix ' . implode(' ', $params));
     }
 
+
     /**
      * Add the list of file(s) and dir(s) to fix to PHP-CS-Fixer parameters
-     * 
-     * @param array $params The PHP-CS-Fixer parameters array
-     * 
+     *
+     * @param  array  $params  The PHP-CS-Fixer parameters array
+     *
      * @throws \Exception
      */
-    protected function preparePathes(array &$params) {
+    protected function preparePathes(array &$params)
+    {
         $params = [];
 
         foreach ($this->argument('path') as $path) {
@@ -79,12 +84,14 @@ class PhpCsFixerFix extends Command {
         }
     }
 
+
     /**
      * Get the configuration file to use.
-     * 
+     *
      * @return string The path of the config file
      */
-    protected function getConfigFile() {
+    protected function getConfigFile()
+    {
         if ($this->option('config') && file_exists(base_path($this->option('config')))) {
             return base_path($this->option('config'));
         }
@@ -96,14 +103,16 @@ class PhpCsFixerFix extends Command {
         return __DIR__ . '/../config/.php-cs';
     }
 
+
     /**
      * Adjust PHP-CS-Fixer parameters based on command options.
-     * 
-     * @param array $params The PHP-CS-Fixer parameters array
-     * 
+     *
+     * @param  array  $params  The PHP-CS-Fixer parameters array
+     *
      * @throws \Exception
      */
-    protected function prepareOptions(array &$params) {
+    protected function prepareOptions(array &$params)
+    {
         $params[] = '--path-mode="' . $this->option('path-mode') . '"';
 
         $params[] = '--allow-risky="' . ($this->option('allow-risky') ? 'yes' : 'no') . '"';
