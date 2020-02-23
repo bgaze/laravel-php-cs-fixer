@@ -27,12 +27,18 @@ $notName = [
 $rules = [
     '@PSR2' => true,
     'array_indentation' => true,
-    'array_syntax' => ['syntax' => 'short'],
+    'array_syntax' => [
+        'syntax' => 'short',
+    ],
+    'no_blank_lines_after_phpdoc' => true,
+    'no_extra_blank_lines' => [
+        'tokens' => ['curly_brace_block', 'extra', 'parenthesis_brace_block', 'square_brace_block', 'throw', 'use'],
+    ],
     'no_multiline_whitespace_before_semicolons' => true,
     'no_short_echo_tag' => true,
     'no_unused_imports' => true,
-    'not_operator_with_successor_space' => true,
     'no_useless_else' => true,
+    'not_operator_with_successor_space' => true,
     'ordered_imports' => [
         'sortAlgorithm' => 'length',
     ],
@@ -42,9 +48,9 @@ $rules = [
     'phpdoc_order' => true,
     'phpdoc_separation' => true,
     'phpdoc_single_line_var_spacing' => true,
+    'phpdoc_to_comment' => true,
     'phpdoc_trim' => true,
     'phpdoc_var_without_name' => true,
-    'phpdoc_to_comment' => true,
     'single_quote' => true,
     'ternary_operator_spaces' => true,
     'trailing_comma_in_multiline_array' => true,
