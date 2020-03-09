@@ -8,10 +8,15 @@
 This package allows to use [PHP-CS-Fixer](https://cs.sensiolabs.org/) right into Laravel 5.5+ applications 
 to format PHP code following PSR-1 and PSR-2 coding standards.
 
-> **Important:**  
+> #### Important  
+>
+> **Default rules set updated in v2.0**  
 > Default PHP-CS-Fixer config was updated in v2 to remove dependency to `@Symfony` ruleset and be more compliant with Laravel coding style.  
 > If needed, you'll find v1 config [here](https://github.com/bgaze/laravel-php-cs-fixer/blob/1.0.2/src/config/.php-cs).
-
+>
+> **Default config file renamed in v2.1**  
+> To stick with PHP-CS-Fixer conventions, default config file was renamed to `.php_cs.dist`, and local config `.php_cs` is supported.   
+> Compatibility with `.php-cs` file is kept, please see [installation instructions](#installation) for more details.
 
 # Credits
 
@@ -37,9 +42,12 @@ To customize the configuration, publish it :
 
 ```$ php artisan vendor:publish --tag=bgaze-php-cs-fixer-config```
 
-> **Note :**  
-> Configuration isn't a standard Laravel config files as it returns an instance of `\PhpCsFixer\Config`.  
-> It will be published into a `.php-cs` file at the Laravel installation root.
+> **Notes :**  
+> * Configuration isn't a standard Laravel config files as it returns an instance of `\PhpCsFixer\Config`.
+> It will be published into a `.php_cs.dist` file at the Laravel installation root.
+> * For local development, you can also create a `.php_cs` file that should be ignored by your VCS.
+> * To maintain compatibility with previous config file name, the package will look for default config in this order:
+>`.php_cs` > `.php_cs.dist` > `.php-cs` > `package default file`
 
 # Usage
 
@@ -74,7 +82,7 @@ Options:
 --diff                           Also produce diff for each file.
 --using-cache                    Enable cache usage.
 --path-mode[=PATH-MODE]          Specify path mode (override|intersection). [default: "override"]
---config[=CONFIG]                The path to a .php-cs-fixer file.
+--config[=CONFIG]                The path to a config file.
 --rules[=RULES]                  The rules to apply for fixer (comma separated).
 --cache-file[=CACHE-FILE]        The path to the cache file.
 --format[=FORMAT]                To output results in other formats.
@@ -88,8 +96,6 @@ Options:
     --env[=ENV]                  The environment the command should run under
 -v|vv|vvv, --verbose             Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
 ```
-
-Default config files `.php_cs.dist` and `.php_cs`
 
 Examples:
 
