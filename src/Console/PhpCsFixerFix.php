@@ -109,12 +109,14 @@ class PhpCsFixerFix extends Command
             if (!file_exists($config)) {
                 throw new Exception("Provided config doesn't exists : " . $config);
             }
-        } elseif (file_exists(base_path('.php_cs.dist'))) {
-            $config = base_path('.php_cs.dist');
         } elseif (file_exists(base_path('.php_cs'))) {
             $config = base_path('.php_cs');
+        } elseif (file_exists(base_path('.php_cs.dist'))) {
+            $config = base_path('.php_cs.dist');
+        } elseif (file_exists(base_path('.php-cs'))) {
+            $config = base_path('.php-cs');
         } else {
-            $config = realpath(__DIR__ . '/../config/.php-cs');
+            $config = realpath(__DIR__ . '/../config/.php_cs.dist');
         }
 
         $params[] = '--config="' . $config . '"';
